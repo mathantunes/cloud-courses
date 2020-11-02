@@ -74,7 +74,7 @@ aws dynamodb scan --table-name Music
 
 ## SDK Options
 
-[<img alt="APP and AWS SDK Interaction" src="./assets/mermaid-diagram-20201102171134.png" />]
+<img alt="APP and AWS SDK Interaction" src="./assets/mermaid-diagram-20201102171134.png" />
 
 ### HTTPS DynamoDB
 
