@@ -75,8 +75,8 @@ The lower the time to live, the faster changes to DNS records take to propagate 
 
 ### Exam Tips
 
-* *ELBs do not have pre-defined IPv3 addresses; Resolve to them using a DNS name*
-* *Understand the different betwqeen Alias Record and CNAME -> **ALWAYS PICK ALIAS RECORD***
+* *ELBs do not have pre-defined IPv4 addresses; Resolve to them using a DNS name*
+* *Understand the different between Alias Record and CNAME -> **ALWAYS PICK ALIAS RECORD***
 * DNS Types
   * *SOA Records*
   * *NS Records*
