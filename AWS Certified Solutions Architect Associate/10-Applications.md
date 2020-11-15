@@ -1,4 +1,4 @@
-# AWS Applications by Mark Richman
+# AWS Applications by Ryan Kroonenburg
 
 ## SQS
 
@@ -211,3 +211,58 @@ Use SNS Topic to fan out to multiple SQS queues
 
 `Publisher -> SNS Topic -> SQS QUEUES (Subscribed to Topic) -> Lambda`
 
+## Application Summary
+
+* SQS
+  * Decouple Infrastructure
+  * Pull based
+  * 256 KB in size or bigger in s3
+  * Retention from 1 minute to 14 days (default 4 Days)
+  * *Visibility timeout (MAX is 12 Hours)*
+  * Standard
+    * At least once
+    * Unordered
+  * FIFO
+    * Exactly once
+    * Ordered
+  * Long Polling -> Only returns when at least one message arrives or timeout
+* SWF
+  * Task Based
+  * Workflow executions up to one 1 retention
+  * Keeps track os all tasks
+  * Actors
+    * Starters -> Iniciate workflow
+    * Deciders -> Control flow
+    * Activity -> Carry out activity tasks
+* SNS
+  * Push based
+  * Simple APIs
+  * Flexible message delivery
+  * Pay as you go
+* Elastic Transcoder
+  * Convert media files for pcs, smartphones
+* API Gateway
+  * Front door (Gateway in to resources)
+  * Caching capabilities for better performance
+  * Scales automatically
+  * Can throttle to prevent attacks
+  * Log results to CloudWatch
+  * Enable CORS
+* Kinesis
+  * Streams
+    * Data Persistence (default 24h up to 7 days)
+    * Shards
+  * Firehose
+    * Analyse in real time and store
+    * No data Persistence
+  * Analytics
+    * Helps analyse data in both firehose and streams
+* Cognito
+  * Web Identity Provider Federation
+  * User authenticates with provider and exchange auth token to aws creds
+  * User Pools
+    * User based
+    * User registration
+    * account recovery
+  * Identity Pools
+    * AWS Resouce authorization

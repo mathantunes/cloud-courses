@@ -1,4 +1,4 @@
-# AWS High Availability Architecture by Mark Richman
+# AWS High Availability Architecture by Ryan Kroonenburg
 
 ## Elastic Load Balancers
 

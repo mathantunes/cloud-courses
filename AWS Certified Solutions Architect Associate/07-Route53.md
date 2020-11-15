@@ -1,4 +1,4 @@
-# AWS Route 53 by Mark Richman
+# AWS Route 53 by Ryan Kroonenburg
 
 ## DNS 101
 

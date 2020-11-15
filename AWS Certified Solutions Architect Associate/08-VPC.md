@@ -1,4 +1,4 @@
-# AWS VPCs by Mark Richman
+# AWS VPCs by Ryan Kroonenburg
 
 ## VPC Overview
 
