@@ -70,6 +70,8 @@
 * You suspect that one of the AWS services your company is using has gone down. How can you check on the status of this service?
   * AWS Personal Health Dashboard
 
+* Each subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.
+
 ## Auto Scaling
 
 * Reuse some software licenses and therefore need to use dedicated hosts on EC2 instances in your Auto Scaling Groups. What step must you take to meet this requirement?
@@ -93,3 +95,16 @@
   * Workload deployed to actively serve traffic from multiple AWS Regions
   * Requires sync users and data across the Regions
   * Direct traffic to healthy zones
+
+
+* Static Website -> Latency Issues and Costs
+  * S3
+  * CloudFront
+* Cost overruns
+  * AWS Budgets
+
+* Encrypt before writing to storage
+  * Use KMS to encrypt data
+
+* Redshift
+  * Near real-time complex querying on massive data sets
