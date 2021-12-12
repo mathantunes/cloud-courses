@@ -83,15 +83,18 @@ CosmosDB
   * Lease container -> acts as a state storage and coordinates processing across multiple workers
   * Host -> Application instance that uses the change feed processor to listen for changes
   * Delegate -> Code that defines what to do with each batch
-  * Min throughput is 10% of configured max throughput
-  * Ranged query -> goes through different partitions
-  * 
+* Min throughput is 10% of configured max throughput
+* Ranged query -> goes through different partitions
+* If there is some tolerance for the writes -> Bounded Staneless consistency
 
 Kubernetes
 * INGRESS CONTROLLER
   * Provides reverse proxy
   * configurable traffic routing
   * TLS
+  * Deploy with -> HELM
+  * View CLUSTER and EXTERNAL IP -> KubeCtl
+  * Public IP and routing -> Ingress Controller
 
 Secure Logic App with **INTEGRATION SERVICE ENVIRONMENT**
 
@@ -115,8 +118,57 @@ Retrieve and update user profile info stored in **AD** with **Microsoft Graph AP
   * `IDatabase cache = Connection.GetDatabase()`
   * `cache.KeyDelete("Key")`
 
-
 * Secure VNET Azure Functions
   * Create azure function on premium plan
   * Create system assigned managed identity
   * Create key vault policy
+
+* Kubernetes Custom Resource Definition
+  * Azure function code -> Deployment
+  * Polling interval -> Scaled Object
+  * Azure storage connection string -> Secret
+
+* Creating a new web app service
+  * az group create
+  * az appservice plan create
+  * az webapp create
+
+* Create scalable azure function that connects to VNET and Keyvault
+  * Azure functions Premium plan
+  * System assigned identity
+  * Keyvault policy for identity
+
+
+* Azure function custom handlers -> to run RUST (e.g.)
+* Azure function extension bundles -> to have bindings in custom handler
+
+
+* Setup WAF SSL
+  * Use for App service
+  * Override http path
+
+* SLA for archive
+  * Between 1 and 15 hours
+
+* Multiple containers in the same container group
+  * Can only be done on appservice -- linux
+  * az webapp create ... --deployment-source-url container.registry/image:v1.0.0
+  * az webapp config container set --docker-registry-server-url https://images.azurecr.io -u admin -p admin
+
+* Scaling down based on queue
+  * Service Bus Queue
+  * Active message count
+  * Average or count
+  * Less than or equal to
+  * Decrease count by (scale down)
+
+* Retrieve access token
+  * http://169.254.169.254/metadata/identity/oauth2/token
+  * returns JSON
+
+* MFA on AD
+  * Create conditional access policy
+  * Upgrade to AD Premium lol
+  
+* Roles
+  * Operator -> can provision but can't read data
